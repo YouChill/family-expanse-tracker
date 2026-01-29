@@ -98,7 +98,7 @@ export interface Database {
   }
 }
 
-export type ExpenseCategory = 
+export type ExpenseCategory =
   | 'food'
   | 'home'
   | 'transport'
@@ -113,3 +113,10 @@ export type ExpenseCategory =
 export type Expense = Database['public']['Tables']['expenses']['Row']
 export type User = Database['public']['Tables']['users']['Row']
 export type Family = Database['public']['Tables']['families']['Row']
+
+export type ExpenseInsert = Database['public']['Tables']['expenses']['Insert']
+export type ExpenseUpdate = Database['public']['Tables']['expenses']['Update']
+export type UserInsert = Database['public']['Tables']['users']['Insert']
+export type UserUpdate = Database['public']['Tables']['users']['Update']
+export type FamilyInsert = Database['public']['Tables']['families']['Insert']
+export type FamilyUpdate = Database['public']['Tables']['families']['Update']

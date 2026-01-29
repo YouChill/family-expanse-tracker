@@ -1,57 +1,60 @@
 // src/lib/constants.ts
 import type { ExpenseCategory } from '@/types/database'
 
-export const EXPENSE_CATEGORIES: Record<ExpenseCategory, { label: string; icon: string; color: string }> = {
+export const EXPENSE_CATEGORIES: Record<
+  ExpenseCategory,
+  { label: string; icon: string; color: string }
+> = {
   food: {
     label: 'Jedzenie i napoje',
     icon: '🍔',
-    color: '#ef4444'
+    color: '#ef4444',
   },
   home: {
     label: 'Dom i rachunki',
     icon: '🏠',
-    color: '#3b82f6'
+    color: '#3b82f6',
   },
   transport: {
     label: 'Transport',
     icon: '🚗',
-    color: '#8b5cf6'
+    color: '#8b5cf6',
   },
   health: {
     label: 'Zdrowie',
     icon: '🏥',
-    color: '#ec4899'
+    color: '#ec4899',
   },
   clothing: {
     label: 'Odzież',
     icon: '👕',
-    color: '#14b8a6'
+    color: '#14b8a6',
   },
   entertainment: {
     label: 'Rozrywka',
     icon: '🎮',
-    color: '#f59e0b'
+    color: '#f59e0b',
   },
   education: {
     label: 'Edukacja',
     icon: '📚',
-    color: '#06b6d4'
+    color: '#06b6d4',
   },
   shopping: {
     label: 'Zakupy',
     icon: '🛒',
-    color: '#84cc16'
+    color: '#84cc16',
   },
   travel: {
     label: 'Podróże',
     icon: '✈️',
-    color: '#6366f1'
+    color: '#6366f1',
   },
   other: {
     label: 'Inne',
     icon: '💰',
-    color: '#64748b'
-  }
+    color: '#64748b',
+  },
 }
 
 export function getCategoryLabel(category: ExpenseCategory): string {
@@ -65,3 +68,10 @@ export function getCategoryIcon(category: ExpenseCategory): string {
 export function getCategoryColor(category: ExpenseCategory): string {
   return EXPENSE_CATEGORIES[category]?.color || '#64748b'
 }
+
+export const CATEGORY_OPTIONS = Object.entries(EXPENSE_CATEGORIES).map(
+  ([value, { label, icon }]) => ({
+    value,
+    label: `${icon} ${label}`,
+  })
+)
